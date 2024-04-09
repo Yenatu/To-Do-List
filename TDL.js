@@ -1,5 +1,15 @@
 var taskCounter = 0; // Variable to keep track of task numbers
 
+// Function to generate a random color
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 // Function to add a new task
 function addTask() {
     var taskInput = document.getElementById("taskInput");
@@ -9,6 +19,7 @@ function addTask() {
         var li = document.createElement("li");
         taskCounter++; // Increment task counter
         li.textContent = taskCounter + ". " + taskInput.value; // Display task number
+        li.style.backgroundColor = getRandomColor(); // Set random background color
         taskList.appendChild(li);
         taskInput.value = "";
         
