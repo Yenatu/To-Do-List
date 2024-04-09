@@ -1,3 +1,5 @@
+var taskCounter = 0; // Variable to keep track of task numbers
+
 // Function to add a new task
 function addTask() {
     var taskInput = document.getElementById("taskInput");
@@ -5,13 +7,15 @@ function addTask() {
 
     if (taskInput.value.trim() !== "") {
         var li = document.createElement("li");
-        li.textContent = taskInput.value;
+        taskCounter++; // Increment task counter
+        li.textContent = taskCounter + ". " + taskInput.value; // Display task number
         taskList.appendChild(li);
         taskInput.value = "";
         
         // Add event listener to delete the task when clicked
         li.addEventListener("click", function() {
             this.parentNode.removeChild(this);
+            taskCounter--; // Decrement task counter when task is deleted
         });
     } else {
         alert("Please enter a task!");
