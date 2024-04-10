@@ -2,7 +2,7 @@ var taskCounter = 0; // Variable to keep track of task numbers
 
 // Function to generate a random color
 function getRandomColor() {
-    var letters = '0123456789ABCDEF';
+    var letters = '0123456789abcdef';
     var color = '#';
     for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
