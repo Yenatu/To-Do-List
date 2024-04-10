@@ -18,7 +18,7 @@ function addTask() {
     if (taskInput.value.trim() !== "") {
         var li = document.createElement("li");
         taskCounter++; // Increment task counter
-        li.textContent = taskCounter + ". " + taskInput.value; // Display task number
+        li.textContent = taskCounter + ") " + taskInput.value; // Display task number
         li.style.backgroundColor = getRandomColor(); // Set random background color
         taskList.appendChild(li);
         taskInput.value = "";
