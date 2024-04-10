@@ -35,8 +35,8 @@ function addTask() {
 }
 
 // Add task when Enter key is pressed
-document.getElementById("taskInput").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
+document.getElementById("taskInput").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
         addTask();
     }
 });
